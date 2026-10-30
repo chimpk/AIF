@@ -77,7 +77,7 @@ $$\text{var}(r, c) = r \times N + c + 1 \quad (0 \le r, c < N)$$
 ### 1. Bài 2 (Phần Engine, Plugin & UI) – Tank Battle (`src/task2_tank_battle/`)
 
 #### A. Luật vật lý cần cài chính xác (Trang 2 đề bài)
-Trong hàm `GameRules.step_with_events(state, actions)`, xử lý lần lượt 4 bước nhỏ:
+Trong hàm `GameRules.step(state, actions)`, xử lý lần lượt 4 bước nhỏ:
 1. **Di chuyển xe (`movement.py`):**
    - Nếu hành động là `MOVE_UP/DOWN/LEFT/RIGHT`: Đầu tiên xoay hướng nhìn (`facing`) của xe theo hướng đó. Nếu ô trước mặt trống (không ra ngoài biên, không có tường, căn cứ, hay xe kia) thì tiến lên 1 ô.
    - Nếu 2 xe cùng bước vào 1 ô trống hoặc đổi chỗ cho nhau $\Rightarrow$ cả hai đứng yên.
@@ -145,9 +145,9 @@ Chỉ có **3 file ngắn** trong `src/task2_tank_battle/contracts/` mà hai b�
 1. **`contracts/types.py`:**
    - `Direction`: `UP`, `DOWN`, `LEFT`, `RIGHT`.
    - `Action`: `MOVE_UP`, `MOVE_DOWN`, `MOVE_LEFT`, `MOVE_RIGHT`, `FIRE`, `STAY`.
-   - Hằng số đề bài: `TANK_HP = 6`, `BASE_HP = 9`, `WALL_HP = 3`, `DAMAGE_PER_HIT = 1`, `BULLET_SPEED = 3`.
+   - Hằng số đề bài & luật chốt: `TANK_HP = 6`, `BASE_HP = 9`, `WALL_HP = 3`, `DAMAGE_PER_HIT = 1`, `BULLET_SPEED = 3`, `MAX_BULLETS_PER_TANK = 1`, `DEFAULT_MAX_CYCLES = 300`.
 2. **`contracts/state.py`:**
-   - Các `@dataclass(frozen=True)`: `TankState`, `BaseState`, `WallState`, `BulletState`, `GameState` và `GameOutcome` (`ONGOING`, `WIN_P0`, `WIN_P1`, `DRAW`).
+   - Các `@dataclass(frozen=True, slots=True)`: `TankState`, `BaseState`, `WallState`, `BulletState`, `GameState` (có `max_cycles: int = DEFAULT_MAX_CYCLES`) và `GameOutcome` (`ONGOING`, `WIN_P0`, `WIN_P1`, `DRAW`).
 3. **`contracts/interfaces.py`:**
-   - Giao diện `ForwardModel`: có hàm `legal_actions(state, player)`, `step(state, actions) -> GameState`, `outcome(state)`, `is_terminal(state)`.
+   - Giao diện `ForwardModel`: có hàm `legal_actions(state, player)`, `step(state, actions) -> GameState`, `outcome(state)`, `is_terminal(state)`. (Không dùng `step_with_events`; cả AI và UI chỉ gọi `step` thuần trả về `GameState`).
    - Lớp trừu tượng `TankAgent`: có hàm `reset(player, model)` và `choose_action(state, time_budget_s) -> Action`.

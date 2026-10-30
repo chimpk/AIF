@@ -1,8 +1,10 @@
 # 503043 – Introduction to Artificial Intelligence (Final Project)
 
+> **Trạng thái hiện tại:** Repository đang ở mức **scaffold – chưa có implementation**. Toàn bộ module chỉ chứa khai báo giao diện (interface, dataclass, enum, chữ ký hàm và `TODO`) để 2 thành viên tự cài đặt độc lập trên nhánh `person-a` và `person-b`.
+
 Repository cho đồ án cuối kỳ môn Trí tuệ Nhân tạo gồm 3 bài toán độc lập:
 - **Task 1:** N-Queens (Propositional Logic / PySAT Glucose3 & Local Search Min-Conflicts) — **Người A**
-- **Task 2:** Tank Battle (Adversarial Search Minimax/Alpha-Beta, PyGame UI & Plugin Arena) — **AI: Người A | Engine & UI: Người B**
+- **Task 2:** Tank Battle (Adversarial Search Minimax/Alpha-Beta, PyGame UI & Plugin Arena) — **AI: Người A | Engine & UI: Người B | Contracts: A+B**
 - **Task 3:** Kakuro (CSP, Constraint Propagation FC/GAC, Backtracking & Domain Visualization UI) — **Người B**
 
 ---
@@ -10,7 +12,7 @@ Repository cho đồ án cuối kỳ môn Trí tuệ Nhân tạo gồm 3 bài to
 ## 1. Tài liệu hướng dẫn cho nhóm (Đọc trước khi code)
 
 Toàn bộ tài liệu nằm gọn trong 2 file dễ đọc tại thư mục [`docs/`](docs/):
-1. **[`docs/01_tong_quan_va_phan_cong.md`](docs/01_tong_quan_va_phan_cong.md)**: Bảng chia việc A/B, cách làm song song không chờ nhau, checklist 6 tuần và quy tắc Git.
+1. **[`docs/01_tong_quan_va_phan_cong.md`](docs/01_tong_quan_va_phan_cong.md)**: Bảng chia việc A/B, cách làm song song không chờ nhau, checklist 6 tuần và quy tắc Git (`main`, `person-a`, `person-b`).
 2. **[`docs/02_huong_dan_code_3_bai.md`](docs/02_huong_dan_code_3_bai.md)**: Giải thích thuật toán từng bài dễ hiểu + bảng danh sách các file và hàm mỗi người cần viết.
 
 ---
@@ -26,11 +28,125 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
+python -m pip install -e .
+```
+
+> **Lưu ý:** Luôn chạy `python -m pip install -e .` để mọi môi trường terminal (PowerShell, bash, pytest) đều nhận diện được các package trong `src/`. File `.env.example` (sao chép thành `.env`) chỉ hỗ trợ thêm cho VS Code IDE / Jupyter extension chứ không thay thế `pip install -e .` khi chạy trực tiếp từ terminal ngoài.
+
+---
+
+## 3. Cây thư mục & Phân quyền sở hữu (`A`, `B`, `A+B`)
+
+```text
+AIF/
+├── README.md                                  # [A+B]
+├── pyproject.toml                             # [A+B]
+├── requirements.txt                           # [A+B]
+├── requirements-dev.txt                       # [A+B]
+├── .gitignore                                 # [A+B]
+├── .gitattributes                             # [A+B]
+├── .env.example                               # [A+B] Mẫu cấu hình PYTHONPATH=src cho VS Code
+├── demo.txt                                   # [A+B] Placeholder URL video demo
+├── docs/
+│   ├── 01_tong_quan_va_phan_cong.md           # [A+B]
+│   └── 02_huong_dan_code_3_bai.md             # [A+B]
+├── src/
+│   ├── task1_nqueens/                         # [Người A]
+│   │   ├── __init__.py
+│   │   ├── __main__.py
+│   │   ├── board.py
+│   │   ├── encoding/
+│   │   │   ├── __init__.py
+│   │   │   ├── variable_mapper.py
+│   │   │   ├── attack_lines.py
+│   │   │   └── cnf_builder.py
+│   │   ├── solvers/
+│   │   │   ├── __init__.py
+│   │   │   ├── sat_solver.py
+│   │   │   ├── conflict_tracker.py
+│   │   │   ├── selection_strategies.py
+│   │   │   └── min_conflicts.py
+│   │   └── benchmark/
+│   │       ├── __init__.py
+│   │       └── runner.py
+│   ├── task2_tank_battle/
+│   │   ├── __init__.py                        # [B]
+│   │   ├── __main__.py                        # [B]
+│   │   ├── contracts/                         # [A+B] Hợp đồng giao tiếp chung
+│   │   │   ├── __init__.py
+│   │   │   ├── types.py
+│   │   │   ├── state.py
+│   │   │   └── interfaces.py
+│   │   ├── ai/                                # [Người A]
+│   │   │   ├── __init__.py
+│   │   │   ├── game_tree.py
+│   │   │   ├── evaluator.py
+│   │   │   ├── search.py
+│   │   │   ├── move_ordering.py
+│   │   │   ├── transposition.py
+│   │   │   ├── iterative_deepening.py
+│   │   │   └── search_agent.py
+│   │   ├── benchmark/                         # [Người A]
+│   │   │   ├── __init__.py
+│   │   │   └── runner.py
+│   │   ├── engine/                            # [Người B]
+│   │   │   ├── __init__.py
+│   │   │   ├── map_loader.py
+│   │   │   ├── movement.py
+│   │   │   ├── bullet_physics.py
+│   │   │   └── rules.py
+│   │   ├── plugins/                           # [Người B]
+│   │   │   ├── __init__.py
+│   │   │   ├── loader.py
+│   │   │   ├── guard.py
+│   │   │   ├── registry.py
+│   │   │   └── builtin/
+│   │   │       ├── __init__.py
+│   │   │       └── random_agent.py
+│   │   ├── ui/                                # [Người B]
+│   │   │   ├── __init__.py
+│   │   │   ├── app.py
+│   │   │   └── renderer.py
+│   │   └── maps/                              # [B: map thường | A: maps/scenarios/]
+│   └── task3_kakuro/                          # [Người B]
+│       ├── __init__.py
+│       ├── __main__.py
+│       ├── events.py
+│       ├── verify.py
+│       ├── model/
+│       │   ├── __init__.py
+│       │   ├── cell.py
+│       │   ├── run.py
+│       │   └── puzzle.py
+│       ├── csp/
+│       │   ├── __init__.py
+│       │   ├── combinations.py
+│       │   ├── constraint.py
+│       │   ├── domains.py
+│       │   └── csp.py
+│       ├── propagation/
+│       │   ├── __init__.py
+│       │   ├── forward_checking.py
+│       │   └── gac.py
+│       ├── search/
+│       │   ├── __init__.py
+│       │   ├── heuristics.py
+│       │   └── backtracking.py
+│       ├── ui/
+│       │   ├── __init__.py
+│       │   ├── app.py
+│       │   └── trace_player.py
+│       └── data/puzzles/
+├── tests/                                     # [A+B theo từng thư mục con]
+├── experiments/                               # [A: task1, task2 | B: task3]
+└── report/                                    # [A+B]
 ```
 
 ---
 
-## 3. Lệnh chạy từng bài (sau khi cài đặt)
+## 4. Lệnh chạy dự kiến (sau khi hoàn thành cài đặt)
+
+> Các lệnh dưới đây là giao diện CLI dự kiến sau khi hai thành viên hoàn tất phần `TODO` trong từng package:
 
 ```bash
 # Task 1: N-Queens

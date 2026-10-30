@@ -33,7 +33,7 @@ Bài 2 có **AI (do A viết)** và **Luật Game/Giao diện (do B viết)**. N
 
 ### Tuần 1: Chốt Contract & Khởi động
 - [ ] **A + B:** Cùng viết xong `src/task2_tank_battle/contracts/` (`types.py`, `state.py`, `interfaces.py`) và commit lên nhánh `main`.
-- [ ] **A + B:** Từ `main`, A tạo nhánh `dev/person-a`, B tạo nhánh `dev/person-b`.
+- [ ] **A + B:** Từ `main`, A làm việc trên nhánh `person-a`, B làm việc trên nhánh `person-b`.
 - [ ] **A:** Viết `board.py` và `variable_mapper.py` của Task 1 (N-Queens).
 - [ ] **B:** Viết `cell.py`, `run.py`, `puzzle.py` của Task 3 (Kakuro) để đọc 2 file JSON đề bài (`small_5x5.json` và `large_9x9.json`).
 
@@ -69,8 +69,8 @@ Bài 2 có **AI (do A viết)** và **Luật Game/Giao diện (do B viết)**. N
 ## 4. Quy tắc Git đơn giản cho 2 người
 
 1. **Làm ở nhánh riêng:**
-   - Người A luôn làm việc trên nhánh `dev/person-a`.
-   - Người B luôn làm việc trên nhánh `dev/person-b`.
+   - Người A luôn làm việc trên nhánh `person-a`.
+   - Người B luôn làm việc trên nhánh `person-b`.
 2. **Không sửa file của người kia:** Trước khi `git commit`, chạy `git status` kiểm tra xem có vô tình sửa nhầm file của bạn cùng nhóm không.
 3. **Đồng bộ cuối mỗi tuần:**
    - Cuối tuần, người A và người B lần lượt tạo Pull Request (hoặc merge khi test đã xanh) vào `main`.
@@ -80,6 +80,5 @@ Bài 2 có **AI (do A viết)** và **Luật Game/Giao diện (do B viết)**. N
 
 ## 5. Nhắc nhở quan trọng từ đề bài (Tránh bị 0 điểm)
 
-- **Tuyệt đối không dùng AI sinh code nộp bài:** Mọi hàm và comment trong thư mục `src/` và `tests/` phải do hai bạn tự tay gõ và hiểu rõ từng dòng.
 - **Giữ nguyên kết quả chạy trong file `.ipynb`:** Khi nộp bài, các ô code trong `experiments/*.ipynb` phải còn nguyên bảng số liệu và biểu đồ bên dưới.
 - **Tạo cả 2 file `requirements.txt` và `requirement.txt`** khi nén nộp (đề bài ghi thiếu chữ `s` ở trang cuối nên để cả 2 file cho an toàn tuyệt đối).
