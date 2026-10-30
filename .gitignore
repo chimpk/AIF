@@ -1,0 +1,31 @@
+# Virtual environments & caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Build & packaging outputs
+build/
+dist/
+*.egg-info/
+AI_final_*/
+*.zip
+
+# LaTeX auxiliary files (keep report.pdf)
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.fdb_latexmk
+report/*.fls
+report/*.log
+report/*.out
+report/*.synctex.gz
+
+# OS files
+.DS_Store
+Thumbs.db

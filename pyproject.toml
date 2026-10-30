@@ -1,0 +1,26 @@
+[project]
+name = "tdtu-ai-final"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+    "regression: golden regression tests",
+    "slow: long-running benchmark smoke tests",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "src"
+strict = true
+ignore_missing_imports = true

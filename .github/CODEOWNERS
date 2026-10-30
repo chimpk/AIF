@@ -1,0 +1,34 @@
+# Code ownership (thay @person-a va @person-b bang username GitHub that cua 2 ban)
+
+# Hop dong chung (ca 2 cung duyet khi thay doi)
+/src/task2_tank_battle/contracts/       @person-a @person-b
+/tests/contracts/                       @person-a @person-b
+
+# Nguoi A so huu doc quyen
+/src/task1_nqueens/                     @person-a
+/src/task2_tank_battle/ai/              @person-a
+/src/task2_tank_battle/benchmark/       @person-a
+/src/task2_tank_battle/maps/scenarios/  @person-a
+/tests/task1/                           @person-a
+/tests/task2/ai/                        @person-a
+/tests/task2/integration/               @person-a
+/experiments/task1_nqueens.ipynb        @person-a
+/experiments/task2_search.ipynb         @person-a
+/experiments/configs/task1.json         @person-a
+/experiments/configs/task2.json         @person-a
+/experiments/results/task1/             @person-a
+/experiments/results/task2/             @person-a
+
+# Nguoi B so huu doc quyen
+/src/task2_tank_battle/engine/          @person-b
+/src/task2_tank_battle/plugins/         @person-b
+/src/task2_tank_battle/ui/              @person-b
+/src/task3_kakuro/                      @person-b
+/tests/task2/engine/                    @person-b
+/tests/task2/plugins/                   @person-b
+/tests/task2/ui/                        @person-b
+/tests/task3/                           @person-b
+/tests/packaging/                       @person-b
+/experiments/task3_kakuro.ipynb         @person-b
+/experiments/configs/task3.json         @person-b
+/experiments/results/task3/             @person-b

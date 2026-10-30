@@ -1,0 +1,8 @@
+# Runtime dependencies (Python 3.11)
+python-sat>=1.8.dev13
+pygame>=2.5.2
+numpy>=1.26.0
+pandas>=2.1.0
+matplotlib>=3.8.0
+jupyter>=1.0.0
+nbformat>=5.9.0
