@@ -1,6 +1,8 @@
 # 503043 – Introduction to Artificial Intelligence (Final Project)
 
-> **Trạng thái hiện tại:** Repository đang ở mức **scaffold – chưa có implementation**. Toàn bộ module chỉ chứa khai báo giao diện (interface, dataclass, enum, chữ ký hàm và `TODO`) để 2 thành viên tự cài đặt độc lập trên nhánh `person-a` và `person-b`.
+> **Trạng thái hiện tại:**
+> - **Task 2 (Engine, Plugins, UI, CLI) & Task 3 (Kakuro CSP, Solver, Visualizer):** Đã hoàn thành 100% mã nguồn và kiểm thử trên nhánh `person-b`.
+> - **Task 1 (N-Queens) & Task 2 (AI Search):** Scaffold sẵn sàng cho Người A triển khai trên nhánh `person-a`.
 
 Repository cho đồ án cuối kỳ môn Trí tuệ Nhân tạo gồm 3 bài toán độc lập:
 - **Task 1:** N-Queens (Propositional Logic / PySAT Glucose3 & Local Search Min-Conflicts) — **Người A**
@@ -144,20 +146,28 @@ AIF/
 
 ---
 
-## 4. Lệnh chạy dự kiến (sau khi hoàn thành cài đặt)
+## 4. Hướng dẫn chạy thử nghiệm các tính năng đã hoàn thành
 
-> Các lệnh dưới đây là giao diện CLI dự kiến sau khi hai thành viên hoàn tất phần `TODO` trong từng package:
-
+### Task 3: Trực quan hóa & Giải Kakuro (Người B)
 ```bash
-# Task 1: N-Queens
+# Giao diện PyGame trực quan hóa miền giá trị và quá trình giải
+python -m task3_kakuro ui --puzzle src/task3_kakuro/data/puzzles/large_9x9.json
+
+# Giải và in kết quả kiểm chứng ra console
+python -m task3_kakuro solve --puzzle src/task3_kakuro/data/puzzles/large_9x9.json --preset mac-mrvdeg-lcv
+```
+
+### Task 2: Đấu trường Bắn xe tăng (Người B Engine/UI & Plugin Arena)
+```bash
+# Giao diện PyGame điều khiển và đấu xe tăng
+python -m task2_tank_battle gui
+
+# Đấu đối kháng headless giữa các bot
+python -m task2_tank_battle match --p0 tactical --p1 random --map src/task2_tank_battle/maps/small_7x7.map --headless --games 5
+```
+
+### Task 1: N-Queens (Dành cho Người A triển khai trên person-a)
+```bash
 python -m task1_nqueens solve --method sat --n 8 --show
 python -m task1_nqueens solve --method mc-max --n 100 --seed 0
-
-# Task 2: Tank Battle
-python -m task2_tank_battle gui
-python -m task2_tank_battle match --p0 A-H_ALPHABETA --p1 random --map src/task2_tank_battle/maps/small_7x7.map --headless
-
-# Task 3: Kakuro
-python -m task3_kakuro solve --puzzle src/task3_kakuro/data/puzzles/large_9x9.json --preset mac-mrvdeg-lcv
-python -m task3_kakuro ui --puzzle src/task3_kakuro/data/puzzles/large_9x9.json
 ```
