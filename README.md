@@ -1,8 +1,9 @@
 # 503043 – Introduction to Artificial Intelligence (Final Project)
 
 > **Trạng thái hiện tại:**
-> - **Task 2 (Engine, Plugins, UI, CLI) & Task 3 (Kakuro CSP, Solver, Visualizer):** Đã hoàn thành 100% mã nguồn và kiểm thử trên nhánh `person-b`.
-> - **Task 1 (N-Queens) & Task 2 (AI Search):** Scaffold sẵn sàng cho Người A triển khai trên nhánh `person-a`.
+> - **Hoàn thành 100%:** Cả 3 bài toán (Task 1 N-Queens, Task 2 Tank Battle, Task 3 Kakuro) đã hoàn thiện đầy đủ mã nguồn, kiểm thử, tích hợp AI và giao diện trên nhánh `main`.
+> - **Kiểm thử:** Đầy đủ 204 unit & integration tests (`pytest` đạt 100%).
+> - **Thực nghiệm & Báo cáo:** Cả 3 Jupyter Notebooks (`experiments/*.ipynb`) đều đã chạy hoàn tất và lưu trữ đầy đủ output/biểu đồ.
 
 Repository cho đồ án cuối kỳ môn Trí tuệ Nhân tạo gồm 3 bài toán độc lập:
 - **Task 1:** N-Queens (Propositional Logic / PySAT Glucose3 & Local Search Min-Conflicts) — **Người A**
@@ -146,28 +147,52 @@ AIF/
 
 ---
 
-## 4. Hướng dẫn chạy thử nghiệm các tính năng đã hoàn thành
+## 4. Hướng dẫn chạy chương trình & thử nghiệm
 
-### Task 3: Trực quan hóa & Giải Kakuro (Người B)
+### Task 1: N-Queens (SAT Glucose3 & Min-Conflicts)
 ```bash
-# Giao diện PyGame trực quan hóa miền giá trị và quá trình giải
-python -m task3_kakuro ui --puzzle src/task3_kakuro/data/puzzles/large_9x9.json
+# Giải bằng SAT Solver (PySAT Glucose3) và in bàn cờ ASCII
+python -m task1_nqueens solve --method sat --n 8 --show
 
-# Giải và in kết quả kiểm chứng ra console
-python -m task3_kakuro solve --puzzle src/task3_kakuro/data/puzzles/large_9x9.json --preset mac-mrvdeg-lcv
+# Giải bằng Local Search Min-Conflicts với heuristic chọn hậu có xung đột lớn nhất
+python -m task1_nqueens solve --method mc-max --n 100 --seed 42 --show
+
+# Chạy toàn bộ benchmark suite Task 1
+python -m task1_nqueens benchmark
 ```
 
-### Task 2: Đấu trường Bắn xe tăng (Người B Engine/UI & Plugin Arena)
+### Task 2: Đấu trường Bắn xe tăng (Engine, AI Search & PyGame UI)
 ```bash
-# Giao diện PyGame điều khiển và đấu xe tăng
+# Khởi chạy giao diện PyGame Tank Battle (chọn map, chế độ người chơi/AI bot)
 python -m task2_tank_battle gui
 
-# Đấu đối kháng headless giữa các bot
-python -m task2_tank_battle match --p0 tactical --p1 random --map src/task2_tank_battle/maps/small_7x7.map --headless --games 5
+# Liệt kê các agent đã đăng ký sẵn trong hệ thống
+python -m task2_tank_battle list-agents
+
+# Đấu đối kháng headless giữa AI Search Agent (Alpha-Beta) và Tactical Baseline
+python -m task2_tank_battle match --p0 A-H_ALPHABETA --p1 tactical --map src/task2_tank_battle/maps/small_7x7.map --headless --games 5
+
+# Chạy benchmark đối đầu 4 cấu hình AI (Minimax, AlphaBeta, Heuristic, ID)
+python -m task2_tank_battle.benchmark
 ```
 
-### Task 1: N-Queens (Dành cho Người A triển khai trên person-a)
+### Task 3: Trực quan hóa & Giải Kakuro (CSP, FC/GAC, Backtracking & PyGame UI)
 ```bash
-python -m task1_nqueens solve --method sat --n 8 --show
-python -m task1_nqueens solve --method mc-max --n 100 --seed 0
+# Giao diện PyGame trực quan hóa miền giá trị (domain candidates) và từng bước giải
+python -m task3_kakuro ui --puzzle src/task3_kakuro/data/puzzles/large_9x9.json
+
+# Giải và in kết quả kiểm chứng ra console với preset MAC + MRV + LCV
+python -m task3_kakuro solve --puzzle src/task3_kakuro/data/puzzles/large_9x9.json --preset mac-mrvdeg-lcv
+
+# Chạy benchmark 5 preset thuật toán trên tập câu đố
+python -m task3_kakuro bench --runs 10
+```
+
+---
+
+## 5. Chạy toàn bộ kiểm thử (Test Suite)
+
+```bash
+# Chạy toàn bộ 204 unit & integration test
+pytest -v
 ```

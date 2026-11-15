@@ -1,7 +1,7 @@
 # Tests – Task 1: N-Queens (`tests/task1/`)
 
-- **Owner:** `Người A`
-- **TODO cần tự viết:**
+- **Owner:** `Người A` (Đã hoàn thành)
+- **Đã kiểm thử:**
   - `test_board.py`: Kiểm tra `Placement` và `SolutionValidator.is_valid` trên các bàn cờ đúng và các bàn cờ có cặp hậu ăn nhau (ngang, dọc, chéo).
   - `test_variable_mapper.py`: Kiểm tra ánh xạ 2 chiều `var(row, col)` <-> `cell(var)` với `1..N*N`.
   - `test_attack_lines.py`: Kiểm tra `AttackLineGenerator.all_lines()` sinh đủ hàng, cột, đường chéo độ dài >= 2.
@@ -9,3 +9,4 @@
   - `test_sat_solver.py`: Kiểm tra `SatNQueensSolver` với `Glucose3` ($N=2, 3$ vô nghiệm; $N \ge 4$ trả nghiệm hợp lệ).
   - `test_conflict_tracker.py`: Kiểm tra `conflicts_of`, `conflicts_if`, `move` khớp với đếm vét cạn.
   - `test_selection_strategies.py` & `test_min_conflicts.py`: Kiểm tra `RandomConflictedSelection`, `MaxConflictSelection` và `MinConflictsSolver`.
+  - `test_nqueens_benchmark.py`: Kiểm tra benchmark runner cho SAT và Min-Conflicts.
