@@ -1,7 +1,7 @@
 """Unit tests for shared Task 2 contracts (Owner: A+B)."""
 
-from dataclasses import FrozenInstanceError
 import unittest
+from dataclasses import FrozenInstanceError
 
 from task2_tank_battle.contracts import (
     BASE_HP,

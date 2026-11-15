@@ -1,45 +1,45 @@
-# TODO(A+B): Thay @TODO_GITHUB_USERNAME_A va @TODO_GITHUB_USERNAME_B bang GitHub username that cua 2 thanh vien truoc khi bat branch protection tren GitHub.
+# A: afk-kham. B: chimpk.
 
 # Cac file cau hinh root, tai lieu chung va hop dong chung (ca 2 cung duyet khi thay doi)
-/README.md                              @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/pyproject.toml                         @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/requirements.txt                       @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/requirements-dev.txt                   @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/.gitignore                             @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/.gitattributes                         @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/.env.example                           @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/demo.txt                               @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/.github/                               @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/docs/                                  @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/report/                                @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/src/task2_tank_battle/contracts/       @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
-/tests/contracts/                       @TODO_GITHUB_USERNAME_A @TODO_GITHUB_USERNAME_B
+/README.md                              @afk-kham @chimpk
+/pyproject.toml                         @afk-kham @chimpk
+/requirements.txt                       @afk-kham @chimpk
+/requirements-dev.txt                   @afk-kham @chimpk
+/.gitignore                             @afk-kham @chimpk
+/.gitattributes                         @afk-kham @chimpk
+/.env.example                           @afk-kham @chimpk
+/demo.txt                               @afk-kham @chimpk
+/.github/                               @afk-kham @chimpk
+/docs/                                  @afk-kham @chimpk
+/report/                                @afk-kham @chimpk
+/src/task2_tank_battle/contracts/       @afk-kham @chimpk
+/tests/contracts/                       @afk-kham @chimpk
 
 # Nguoi A so huu doc quyen
-/src/task1_nqueens/                     @TODO_GITHUB_USERNAME_A
-/src/task2_tank_battle/ai/              @TODO_GITHUB_USERNAME_A
-/src/task2_tank_battle/benchmark/       @TODO_GITHUB_USERNAME_A
-/src/task2_tank_battle/maps/scenarios/  @TODO_GITHUB_USERNAME_A
-/tests/task1/                           @TODO_GITHUB_USERNAME_A
-/tests/task2/ai/                        @TODO_GITHUB_USERNAME_A
-/tests/task2/integration/               @TODO_GITHUB_USERNAME_A
-/experiments/task1_nqueens.ipynb        @TODO_GITHUB_USERNAME_A
-/experiments/task2_search.ipynb         @TODO_GITHUB_USERNAME_A
-/experiments/configs/task1.json         @TODO_GITHUB_USERNAME_A
-/experiments/configs/task2.json         @TODO_GITHUB_USERNAME_A
-/experiments/results/task1/             @TODO_GITHUB_USERNAME_A
-/experiments/results/task2/             @TODO_GITHUB_USERNAME_A
+/src/task1_nqueens/                     @afk-kham
+/src/task2_tank_battle/ai/              @afk-kham
+/src/task2_tank_battle/benchmark/       @afk-kham
+/src/task2_tank_battle/maps/scenarios/  @afk-kham
+/tests/task1/                           @afk-kham
+/tests/task2/ai/                        @afk-kham
+/tests/task2/integration/               @afk-kham
+/experiments/task1_nqueens.ipynb        @afk-kham
+/experiments/task2_search.ipynb         @afk-kham
+/experiments/configs/task1.json         @afk-kham
+/experiments/configs/task2.json         @afk-kham
+/experiments/results/task1/             @afk-kham
+/experiments/results/task2/             @afk-kham
 
 # Nguoi B so huu doc quyen
-/src/task2_tank_battle/engine/          @TODO_GITHUB_USERNAME_B
-/src/task2_tank_battle/plugins/         @TODO_GITHUB_USERNAME_B
-/src/task2_tank_battle/ui/              @TODO_GITHUB_USERNAME_B
-/src/task3_kakuro/                      @TODO_GITHUB_USERNAME_B
-/tests/task2/engine/                    @TODO_GITHUB_USERNAME_B
-/tests/task2/plugins/                   @TODO_GITHUB_USERNAME_B
-/tests/task2/ui/                        @TODO_GITHUB_USERNAME_B
-/tests/task3/                           @TODO_GITHUB_USERNAME_B
-/tests/packaging/                       @TODO_GITHUB_USERNAME_B
-/experiments/task3_kakuro.ipynb         @TODO_GITHUB_USERNAME_B
-/experiments/configs/task3.json         @TODO_GITHUB_USERNAME_B
-/experiments/results/task3/             @TODO_GITHUB_USERNAME_B
+/src/task2_tank_battle/engine/          @chimpk
+/src/task2_tank_battle/plugins/         @chimpk
+/src/task2_tank_battle/ui/              @chimpk
+/src/task3_kakuro/                      @chimpk
+/tests/task2/engine/                    @chimpk
+/tests/task2/plugins/                   @chimpk
+/tests/task2/ui/                        @chimpk
+/tests/task3/                           @chimpk
+/tests/packaging/                       @chimpk
+/experiments/task3_kakuro.ipynb         @chimpk
+/experiments/configs/task3.json         @chimpk
+/experiments/results/task3/             @chimpk

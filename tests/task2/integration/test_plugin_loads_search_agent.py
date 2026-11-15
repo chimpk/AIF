@@ -1,7 +1,7 @@
 """Integration tests verifying AgentRegistry dynamically loads SearchAgent (Owner: A+B)."""
 
-from pathlib import Path
 import unittest
+from pathlib import Path
 
 from task2_tank_battle.contracts.interfaces import TankAgent
 from task2_tank_battle.plugins.loader import PluginLoader

@@ -287,9 +287,8 @@ class SearchBenchmarkRunner:
             scenarios = {Path(p).stem: self.state_loader(Path(p)) for p in cfg["scenarios"]}
         except NotImplementedError as exc:
             raise RuntimeError(
-                "The game engine (Member B: engine.MapLoader / engine.GameRules) is not "
-                "implemented yet. Pass `model=` and `state_loader=` to SearchBenchmarkRunner "
-                "to benchmark against another ForwardModel."
+                "The configured state loader cannot load this scenario. Pass a working "
+                "`model=` and `state_loader=` to SearchBenchmarkRunner."
             ) from exc
         configs = cfg.get("configs", list(CONFIGS))
         unknown = [c for c in configs if c not in CONFIGS]

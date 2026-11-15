@@ -1,7 +1,7 @@
 """Unit tests for Task 2 Game Engine: MapLoader, Movement, Bullets, and Rules (Owner: B)."""
 
-from pathlib import Path
 import unittest
+from pathlib import Path
 
 from task2_tank_battle.contracts import (
     BASE_HP,

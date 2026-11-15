@@ -32,32 +32,33 @@ Bài 2 có **AI (do A viết)** và **Luật Game/Giao diện (do B viết)**. N
 ## 3. Lộ trình 6 tuần (Checklist công việc)
 
 ### Tuần 1: Chốt Contract & Khởi động
-- [ ] **A + B:** Cùng viết xong `src/task2_tank_battle/contracts/` (`types.py`, `state.py`, `interfaces.py`) và commit lên nhánh `main`.
-- [ ] **A + B:** Từ `main`, A làm việc trên nhánh `person-a`, B làm việc trên nhánh `person-b`.
-- [ ] **A:** Viết `board.py` và `variable_mapper.py` của Task 1 (N-Queens).
-- [ ] **B:** Viết `cell.py`, `run.py`, `puzzle.py` của Task 3 (Kakuro) để đọc 2 file JSON đề bài (`small_5x5.json` và `large_9x9.json`).
+- [x] **A + B:** Cùng viết xong `src/task2_tank_battle/contracts/` (`types.py`, `state.py`, `interfaces.py`) và commit lên nhánh `main`.
+- [x] **A + B:** Từ `main`, A làm việc trên nhánh `person-a`, B làm việc trên nhánh `person-b`.
+- [x] **A:** Viết `board.py` và `variable_mapper.py` của Task 1 (N-Queens).
+- [x] **B:** Viết `cell.py`, `run.py`, `puzzle.py` của Task 3 (Kakuro) để đọc 2 file JSON đề bài (`small_5x5.json` và `large_9x9.json`).
 
 ### Tuần 2: Xây phần lõi (Core 1)
-- [ ] **A (Task 1):** Hoàn thành bộ sinh mệnh đề CNF (`attack_lines.py`, `cnf_builder.py`) và giải bằng `Glucose3` (`sat_solver.py`).
-- [ ] **A (Task 2):** Viết luật giả lập `stub_forward_model.py`, hàm chấm điểm trạng thái (`evaluator.py`) và khung chuyển lượt (`game_tree.py`).
-- [ ] **B (Task 3):** Hoàn thành bảng tổ hợp tổng (`combinations.py`), ràng buộc Kakuro (`constraint.py`, `domains.py`, `csp.py`) và lan truyền `ForwardChecking`.
-- [ ] **B (Task 2):** Viết bộ đọc bản đồ (`map_loader.py`) và xử lý di chuyển xe tăng (`movement.py`).
+- [x] **A (Task 1):** Hoàn thành bộ sinh mệnh đề CNF (`attack_lines.py`, `cnf_builder.py`) và giải bằng `Glucose3` (`sat_solver.py`).
+- [x] **A (Task 2):** Viết luật giả lập `stub_forward_model.py`, hàm chấm điểm trạng thái (`evaluator.py`) và khung chuyển lượt (`game_tree.py`).
+- [x] **B (Task 3):** Hoàn thành bảng tổ hợp tổng (`combinations.py`), ràng buộc Kakuro (`constraint.py`, `domains.py`, `csp.py`) và lan truyền `ForwardChecking`.
+- [x] **B (Task 2):** Viết bộ đọc bản đồ (`map_loader.py`) và xử lý di chuyển xe tăng (`movement.py`).
 
 ### Tuần 3: Hoàn thiện thuật toán (Core 2)
-- [ ] **A (Task 1):** Hoàn thành `Min-Conflicts` chuẩn + Heuristic chọn biến nhiều xung đột nhất (`conflict_tracker.py`, `selection_strategies.py`, `min_conflicts.py`). **Xong code Task 1.**
-- [ ] **A (Task 2):** Hoàn thành `MinimaxSearch` và `AlphaBetaSearch` (`search.py`).
-- [ ] **B (Task 2 – Ưu tiên số 1):** Hoàn thành vật lý đạn bay 3 ô/lượt (`bullet_physics.py`) và luật tổng hợp (`rules.py`), merge vào `main` cuối tuần 3.
-- [ ] **B (Task 3):** Hoàn thành lan truyền `GAC` (`gac.py`), các heuristic `MRV`/`LCV` (`heuristics.py`), bộ giải `BacktrackingSolver` (`backtracking.py`) và bộ kiểm tra nghiệm (`verify.py`). **Giải ra nghiệm bảng 9×9.**
+- [x] **A (Task 1):** Hoàn thành `Min-Conflicts` chuẩn + Heuristic chọn biến nhiều xung đột nhất (`conflict_tracker.py`, `selection_strategies.py`, `min_conflicts.py`). **Xong code Task 1.**
+- [x] **A (Task 2):** Hoàn thành `MinimaxSearch` và `AlphaBetaSearch` (`search.py`).
+- [x] **B (Task 2 – Ưu tiên số 1):** Hoàn thành vật lý đạn bay 3 ô/lượt (`bullet_physics.py`) và luật tổng hợp (`rules.py`), merge vào `main` cuối tuần 3.
+- [x] **B (Task 3):** Hoàn thành lan truyền `GAC` (`gac.py`), các heuristic `MRV`/`LCV` (`heuristics.py`), bộ giải `BacktrackingSolver` (`backtracking.py`) và bộ kiểm tra nghiệm (`verify.py`). **Giải ra nghiệm bảng 9×9.**
 
 ### Tuần 4: Ghép nối & Giao diện (UI)
-- [ ] **A (Task 2):** Tối ưu tìm kiếm thời gian thực (`move_ordering.py`, `transposition.py`, `iterative_deepening.py`), đóng gói `SearchAgent` (`search_agent.py`) và ghép thử với `GameRules` thật của B.
-- [ ] **A (Task 1):** Chạy xong toàn bộ thực nghiệm trên notebook `experiments/task1_nqueens.ipynb` (giữ nguyên output).
-- [ ] **B (Task 2):** Hoàn thành cơ chế nạp plugin nhóm khác (`loader.py`, `guard.py`, `registry.py`) và giao diện `PyGame` (`ui/`).
-- [ ] **B (Task 3):** Hoàn thành giao diện `PyGame` hiển thị miền giá trị `{1..9}`, quá trình cắt tỉa và quay lui (`events.py`, `ui/`).
+- [x] **A (Task 2):** Tối ưu tìm kiếm thời gian thực (`move_ordering.py`, `transposition.py`, `iterative_deepening.py`), đóng gói `SearchAgent` (`search_agent.py`) và ghép thử với `GameRules` thật của B.
+- [x] **A (Task 1):** Chạy xong toàn bộ thực nghiệm trên notebook `experiments/task1_nqueens.ipynb` (giữ nguyên output).
+- [x] **B (Task 2):** Hoàn thành cơ chế nạp plugin nhóm khác (`loader.py`, `guard.py`, `registry.py`) và giao diện `PyGame` (`ui/`).
+- [x] **B (Task 3):** Hoàn thành giao diện `PyGame` hiển thị miền giá trị `{1..9}`, quá trình cắt tỉa và quay lui (`events.py`, `ui/`).
 
 ### Tuần 5: Chạy thực nghiệm & Viết báo cáo IEEE
-- [ ] **A:** Chạy thực nghiệm so sánh 4 cấu hình tìm kiếm trên `experiments/task2_search.ipynb`; viết phần Task 1 và Task 2 (AI) trong báo cáo LaTeX (`report/`).
-- [ ] **B:** Chạy thực nghiệm Kakuro trên `experiments/task3_kakuro.ipynb`; viết phần Task 3, phần giao diện/plugin Task 2, bảng phân công đóng góp (`Contributions`) và tự chấm điểm (`Self-evaluation`).
+- [x] **A:** Chạy thực nghiệm so sánh 4 cấu hình tìm kiếm trên `experiments/task2_search.ipynb` và giữ nguyên output.
+- [x] **B:** Chạy thực nghiệm Kakuro trên `experiments/task3_kakuro.ipynb` và giữ nguyên output.
+- [ ] **A + B:** Viết báo cáo IEEE gồm Task 1, Task 2, Task 3, `Contributions`, `Self-evaluation`, kết luận và tài liệu tham khảo; xuất `report/report.pdf`.
 
 ### Tuần 6: Quay video Demo, Ôn vấn đáp & Nộp bài
 - [ ] **A + B:** Quay video demo 3 bài, dán link vào `demo.txt`, xuất `report/report.pdf` (tối đa 5 trang).

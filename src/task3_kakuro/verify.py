@@ -19,7 +19,7 @@ class SolutionVerifier:
         if set(solution.keys()) != white_cells:
             return False
 
-        for coord, val in solution.items():
+        for val in solution.values():
             if not isinstance(val, int) or not (1 <= val <= 9):
                 return False
 

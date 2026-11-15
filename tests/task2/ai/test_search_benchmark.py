@@ -114,9 +114,9 @@ def test_unknown_configuration_rejected(runner, tmp_path):
 
 def test_missing_engine_gives_clear_error(model, tmp_path):
     def unimplemented(path):
-        raise NotImplementedError("TODO(B)")
+        raise NotImplementedError("engine unavailable")
 
     cfg = tmp_path / "c.json"
     cfg.write_text(json.dumps({"scenarios": [str(S1)], "depths_ply": [2]}))
-    with pytest.raises(RuntimeError, match="Member B"):
+    with pytest.raises(RuntimeError, match="configured state loader"):
         SearchBenchmarkRunner(model, unimplemented).run(cfg, tmp_path / "o")

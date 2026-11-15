@@ -1,7 +1,7 @@
 """Unit tests for Task 2 Plugin System: Loader, GuardedAgent, and Registry (Owner: B)."""
 
-from pathlib import Path
 import unittest
+from pathlib import Path
 
 from task2_tank_battle.contracts import Action
 from task2_tank_battle.engine import GameRules, MapLoader

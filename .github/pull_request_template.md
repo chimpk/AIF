@@ -1,6 +1,6 @@
 ## Summary
 - Requirement IDs: `R...`
-- Completed TODO IDs: `...`
+- Requirement IDs addressed: ghi rõ mục trong đề bài
 
 ## Ownership & Contract Check
 - [ ] All modified files belong to my assigned ownership in `.github/CODEOWNERS` (or this PR has the `contract-change` label and both owners approve).

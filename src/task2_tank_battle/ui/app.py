@@ -6,7 +6,7 @@ from pathlib import Path
 import pygame
 
 from task2_tank_battle.contracts.interfaces import ForwardModel, TankAgent
-from task2_tank_battle.contracts.state import GameOutcome, GameState
+from task2_tank_battle.contracts.state import GameState
 from task2_tank_battle.contracts.types import Action, PlayerId
 from task2_tank_battle.engine.map_loader import MapLoader
 from task2_tank_battle.engine.rules import GameRules

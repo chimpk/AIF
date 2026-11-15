@@ -1,15 +1,13 @@
 """Unit tests for Task 3: Kakuro CSP, Propagation, Solver, Verifier & UI (Owner: B)."""
 
 import os
-from pathlib import Path
 import unittest
+from pathlib import Path
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 
 from task3_kakuro.csp import (
-    DomainStore,
     KakuroCSP,
-    SumAllDifferentConstraint,
     SumCombinationTable,
 )
 from task3_kakuro.events import TraceRecorder

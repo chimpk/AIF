@@ -1,7 +1,7 @@
 """Integration tests verifying SearchAgent executes against real GameRules engine (Owner: A+B)."""
 
-from pathlib import Path
 import unittest
+from pathlib import Path
 
 from task2_tank_battle.ai.search_agent import SearchAgent
 from task2_tank_battle.contracts.state import GameOutcome

@@ -1,9 +1,10 @@
 # 503043 – Introduction to Artificial Intelligence (Final Project)
 
 > **Trạng thái hiện tại:**
-> - **Hoàn thành 100%:** Cả 3 bài toán (Task 1 N-Queens, Task 2 Tank Battle, Task 3 Kakuro) đã hoàn thiện đầy đủ mã nguồn, kiểm thử, tích hợp AI và giao diện trên nhánh `main`.
+> - **Mã nguồn:** Cả 3 bài toán (Task 1 N-Queens, Task 2 Tank Battle, Task 3 Kakuro) đã có mã nguồn, kiểm thử, tích hợp AI và giao diện trên nhánh `main`.
 > - **Kiểm thử:** Đầy đủ 204 unit & integration tests (`pytest` đạt 100%).
-> - **Thực nghiệm & Báo cáo:** Cả 3 Jupyter Notebooks (`experiments/*.ipynb`) đều đã chạy hoàn tất và lưu trữ đầy đủ output/biểu đồ.
+> - **Thực nghiệm:** Cả 3 Jupyter Notebooks (`experiments/*.ipynb`) đều đã chạy và lưu output/biểu đồ.
+> - **Chưa đủ bộ nộp:** Cần bổ sung `report/report.pdf` và URL video thật trong `demo.txt`.
 
 Repository cho đồ án cuối kỳ môn Trí tuệ Nhân tạo gồm 3 bài toán độc lập:
 - **Task 1:** N-Queens (Propositional Logic / PySAT Glucose3 & Local Search Min-Conflicts) — **Người A**
@@ -49,7 +50,7 @@ AIF/
 ├── .gitignore                                 # [A+B]
 ├── .gitattributes                             # [A+B]
 ├── .env.example                               # [A+B] Mẫu cấu hình PYTHONPATH=src cho VS Code
-├── demo.txt                                   # [A+B] Placeholder URL video demo
+├── demo.txt                                   # [A+B] URL video demo
 ├── docs/
 │   ├── 01_tong_quan_va_phan_cong.md           # [A+B]
 │   └── 02_huong_dan_code_3_bai.md             # [A+B]

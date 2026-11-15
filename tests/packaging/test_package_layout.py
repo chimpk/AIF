@@ -1,8 +1,8 @@
 """Tests for repository structure and Task 3 notebook output retention (Owner: B)."""
 
 import json
-from pathlib import Path
 import unittest
+from pathlib import Path
 
 
 class TestPackagingAndNotebookOutputs(unittest.TestCase):

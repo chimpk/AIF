@@ -62,7 +62,7 @@ class KakuroApp:
 
     def _solve_and_build_player(
         self, puzzle: KakuroPuzzle, preset: str
-    ) -> TraceRecorder | TracePlayer:
+    ) -> TracePlayer:
         """Run `BacktrackingSolver` with a `TraceRecorder` and return a `TracePlayer`."""
         csp = KakuroCSP(puzzle)
         recorder = TraceRecorder()

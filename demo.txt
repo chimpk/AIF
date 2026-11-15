@@ -1,2 +1,1 @@
-# TODO(B): Thay URL placeholder ben duoi bang link video demo that truoc khi nop bai
-https://youtu.be/REPLACE_WITH_DEMO_VIDEO_URL
+# Chưa có URL video demo thật. Phải thay dòng này bằng một URL xem được trước khi nộp.

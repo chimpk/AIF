@@ -9,7 +9,7 @@ from task3_kakuro.events import SolverEvent, TraceRecorder
 from task3_kakuro.model.cell import Coord
 from task3_kakuro.propagation.forward_checking import ForwardChecking
 from task3_kakuro.propagation.gac import GeneralizedArcConsistency
-from task3_kakuro.search.heuristics import LeastConstrainingValue, MRV, MRVDegree
+from task3_kakuro.search.heuristics import MRV, LeastConstrainingValue, MRVDegree
 
 VALID_PRESETS = ("bt", "fc", "fc-mrv", "mac-mrv", "mac-mrvdeg-lcv")
 
