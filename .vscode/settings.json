@@ -14,5 +14,6 @@
     "PYTHONPATH": "${workspaceFolder}/src"
   },
   "editor.formatOnSave": true,
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "latex-workshop.latex.recipe.default": "pdflatex ➞ bibtex ➞ pdflatex × 2"
 }

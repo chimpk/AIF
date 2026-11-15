@@ -79,7 +79,7 @@ The constraints are formulated as Conjunctive Normal Form (CNF) clauses:
 For $N=4$, the total number of clauses is exactly $80$; for $N=8$, it is $736$, matching theoretical combinatorial derivations.
 
 \subsection{PySAT Glucose3 Empirical Evaluation}
-We solve the CNF formulas using the state-of-the-art CDCL solver \texttt{Glucose3} via PySAT. Table~\ref{tab:sat_results} summarizes clause counts and solve times for increasing $N$.
+We solve the CNF formulas using the state-of-the-art CDCL solver \texttt{Glucose3} \cite{glucose3} via PySAT \cite{pysat2018}. Table~\ref{tab:sat_results} summarizes clause counts and solve times for increasing $N$.
 
 \begin{table}[htbp]
 \centering
@@ -152,14 +152,14 @@ The game is formalized as a discrete two-player zero-sum sequential game:
 \begin{itemize}
     \item \textbf{States ($S$):} Positions and orientations of tanks $T_0, T_1$, base healths $B_0, B_1$, destructible wall map $W$, and in-flight bullets $U$.
     \item \textbf{Players ($P$):} Player 0 (MAX) and Player 1 (MIN).
-    \item \textbf{Actions ($A$):} $A = \{\text{MOVE\_UP}, \text{MOVE\_DOWN}, \text{MOVE\_LEFT}, \text{MOVE\_RIGHT}, \text{FIRE}, \text{STAY}\}$.
+    \item \textbf{Actions ($A$):} Six actions: \texttt{MOVE\_UP}, \texttt{MOVE\_DOWN}, \texttt{MOVE\_LEFT}, \texttt{MOVE\_RIGHT}, \texttt{FIRE}, \texttt{STAY}.
     \item \textbf{Physics \& Transition Function ($T$):}
     \begin{itemize}
         \item Tank moves 1 cell per cycle; forward movement blocked by walls, bases, and opponent tanks.
         \item Bullets fly at \textbf{3 cells/cycle} processed \textbf{cell by cell}. Collision checks occur after each cell step, halting bullet travel immediately upon entity impact.
         \item Initial HP: Tank = 6, Base = 9, Wall = 3; Damage = 1.
     \end{itemize}
-    \item \textbf{Terminal Test ($Terminal(s)$):} True iff $\min(T_0.hp, B_0.hp) \le 0$ or $\min(T_1.hp, B_1.hp) \le 0$ or cycle $\ge 300$.
+    \item \textbf{Terminal Test:} True iff $\min(T_0.hp, B_0.hp) \le 0$ or $\min(T_1.hp, B_1.hp) \le 0$ or cycle $\ge 300$.
     \item \textbf{Utility Function ($U(s)$):} $+10^5$ if P0 wins, $-10^5$ if P1 wins, $0$ on draw.
 \end{itemize}
 
@@ -292,6 +292,7 @@ Task 4 (Report) & 1.0 & 1.0 & IEEE 2-column format, full figures/tables \\
 \section{Conclusion}
 This project successfully designed, implemented, and verified solutions for N-Queens, Tank Battle, and Kakuro CSP. Theoretical predictions were validated: CDCL and GAC drastically prune search spaces, Alpha-Beta with move ordering reduces game tree expansions by $95\%$, and domain visualization enhances algorithmic interpretability. All code passes strict linting, type-checking, and 206 automated regression tests.
 
+\nocite{*}
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
