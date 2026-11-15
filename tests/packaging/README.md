@@ -1,5 +1,7 @@
 # Tests – Packaging (`tests/packaging/`)
 
 - **Owner:** `Người B`
-- **TODO cần tự viết:**
-  - `test_package_layout.py`: Kiểm tra gói nộp `AI_final_<GroupID>_<StudentID>` có đủ `source/` (3 subfolder task + `README.md` + `requirements.txt` + `requirement.txt`), `report.pdf`, `demo.txt`, và các cell trong `.ipynb` giữ nguyên output.
+- **Trạng thái:** Đã hoàn thành 100% trong `test_package_layout.py`.
+- **Nội dung kiểm thử:**
+  - Kiểm tra cấu trúc repo, sự tồn tại của các file bắt buộc (`README.md`, `requirements.txt`, `demo.txt`).
+  - Kiểm tra notebook `experiments/task3_kakuro.ipynb` lưu đầy đủ output cho tất cả các cell code theo yêu cầu đề bài.

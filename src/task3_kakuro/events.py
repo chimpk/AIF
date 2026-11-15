@@ -12,20 +12,29 @@ class SolverEvent:
     kind: str
     cell: Coord | None
     values: frozenset[int]
+    domains_snapshot: dict[Coord, frozenset[int]] | None = None
+    assignment_snapshot: dict[Coord, int] | None = None
+    note: str = ""
 
 
 class TraceRecorder:
     """Records `SolverEvent` items during propagation and backtracking for UI replay."""
 
-    def __init__(self) -> None:
-        """Initialize an empty event trace."""
-        raise NotImplementedError("TODO(B): Initialize TraceRecorder")
+    def __init__(self, max_events: int = 25000) -> None:
+        """Initialize an empty event trace with an optional cap."""
+        self._events: list[SolverEvent] = []
+        self._max_events = max_events
 
     def record(self, event: SolverEvent) -> None:
         """Append `event` to the recorded trace."""
-        raise NotImplementedError("TODO(B): Implement TraceRecorder.record")
+        if len(self._events) < self._max_events:
+            self._events.append(event)
+
+    def clear(self) -> None:
+        """Remove all recorded events."""
+        self._events.clear()
 
     @property
     def events(self) -> tuple[SolverEvent, ...]:
         """Return all recorded events in chronological order."""
-        raise NotImplementedError("TODO(B): Return recorded SolverEvent sequence")
+        return tuple(self._events)

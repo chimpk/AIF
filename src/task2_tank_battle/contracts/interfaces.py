@@ -13,19 +13,19 @@ class ForwardModel(Protocol):
 
     def legal_actions(self, state: GameState, player: PlayerId) -> tuple[Action, ...]:
         """Return legal actions for `player` in `state`."""
-        raise NotImplementedError("TODO(A+B): Implement ForwardModel.legal_actions")
+        ...
 
     def step(self, state: GameState, actions: Mapping[PlayerId, Action]) -> GameState:
         """Return the next GameState after applying both players' actions for one cycle."""
-        raise NotImplementedError("TODO(A+B): Implement ForwardModel.step")
+        ...
 
     def outcome(self, state: GameState) -> GameOutcome:
         """Return the outcome of `state` (ONGOING, WIN_P0, WIN_P1, or DRAW)."""
-        raise NotImplementedError("TODO(A+B): Implement ForwardModel.outcome")
+        ...
 
     def is_terminal(self, state: GameState) -> bool:
         """Return True iff `state` is a terminal game state."""
-        raise NotImplementedError("TODO(A+B): Implement ForwardModel.is_terminal")
+        ...
 
 
 class TankAgent(ABC):

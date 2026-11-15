@@ -1,11 +1,12 @@
 # Tests – Task 3: Kakuro CSP (`tests/task3/`)
 
 - **Owner:** `Người B`
-- **TODO cần tự viết:**
-  - `test_puzzle_model.py`: Kiểm tra `KakuroPuzzle.from_json` trên `small_5x5.json` (12 ô trắng) và `large_9x9.json` (48 ô trắng, 28 run).
-  - `test_combinations.py`: Kiểm tra `SumCombinationTable.combos(total, length)`.
-  - `test_constraint.py` & `test_domains.py`: Kiểm tra `SumAllDifferentConstraint.supported_values` và `DomainStore` (`checkpoint` / `restore`).
-  - `test_propagation.py`: Kiểm tra `ForwardChecking` và `GeneralizedArcConsistency` cắt tỉa miền giá trị và phát hiện wipeout.
-  - `test_heuristics.py` & `test_backtracking.py`: Kiểm tra `MRV`, `MRVDegree`, `LeastConstrainingValue` và `BacktrackingSolver` giải đúng cả 2 bảng 5x5 và 9x9.
-  - `test_verify.py`: Kiểm tra `SolutionVerifier.verify`.
-  - `test_trace_player.py`: Kiểm tra `TraceRecorder` và `TracePlayer` (`step_forward` / `step_backward`).
+- **Trạng thái:** Đã hoàn thành 100% trong `test_kakuro.py`.
+- **Nội dung kiểm thử:**
+  - `KakuroPuzzle.from_json`: kiểm tra trên `small_5x5.json` (12 ô trắng, 8 run) và `large_9x9.json` (48 ô trắng, 28 run).
+  - `SumCombinationTable.combos(total, length)`: kiểm tra bảng tổ hợp chữ số không lặp.
+  - `SumAllDifferentConstraint.supported_values` & `DomainStore`: kiểm tra cắt tỉa và hoàn tác `checkpoint`/`restore`.
+  - `ForwardChecking` & `GeneralizedArcConsistency`: kiểm tra cắt tỉa miền giá trị và phát hiện wipeout.
+  - `BacktrackingSolver`: giải đúng cả 5 preset (`bt`, `fc`, `fc-mrv`, `mac-mrv`, `mac-mrvdeg-lcv`) trên cả 2 bảng câu đố.
+  - `SolutionVerifier.verify`: kiểm chứng nghiệm độc lập và từ chối các nghiệm sai luật.
+  - `TracePlayer` & `KakuroApp`: kiểm tra tua sự kiện từng bước và giao diện trực quan hóa.
