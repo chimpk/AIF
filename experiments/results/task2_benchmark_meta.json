@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-11-02T08:14:41+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "forward_model": "stub_forward_model.StubForwardModel",
+  "config": {
+    "scenarios": [
+      "src/task2_tank_battle/maps/scenarios/s1_duel_5x5.map",
+      "src/task2_tank_battle/maps/scenarios/s2_obstacles_9x9.map",
+      "src/task2_tank_battle/maps/scenarios/s3_arena_13x13.map"
+    ],
+    "depths_ply": [
+      2,
+      4,
+      6
+    ],
+    "configs": [
+      "MINIMAX",
+      "ALPHABETA",
+      "H_MINIMAX",
+      "H_ALPHABETA"
+    ],
+    "time_cap_s": 10.0,
+    "match_games": 10,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "positions_per_scenario": 4,
+    "match_depth_ply": 4,
+    "match_max_cycles": 100
+  }
+}
