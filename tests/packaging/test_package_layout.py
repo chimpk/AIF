@@ -18,10 +18,35 @@ class TestPackagingAndNotebookOutputs(unittest.TestCase):
                 root
                 / "experiments"
                 / "results"
+                / "task1"
+                / "task1_sat.csv"
+            ).is_file()
+        )
+        self.assertTrue(
+            (
+                root
+                / "experiments"
+                / "results"
+                / "task2"
+                / "task2_search_runs.csv"
+            ).is_file()
+        )
+        self.assertTrue(
+            (
+                root
+                / "experiments"
+                / "results"
                 / "task3"
                 / "task3_kakuro_benchmark.csv"
             ).is_file()
         )
+        # Ensure no loose files remain directly inside experiments/results except README.md
+        loose_files = [
+            f.name
+            for f in (root / "experiments" / "results").iterdir()
+            if f.is_file() and f.name != "README.md"
+        ]
+        self.assertEqual(loose_files, [])
 
     def test_notebooks_maintain_outputs_for_all_code_cells(self) -> None:
         root = Path(__file__).resolve().parents[2]

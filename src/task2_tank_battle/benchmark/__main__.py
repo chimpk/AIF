@@ -17,7 +17,7 @@ def main(argv: list[str] | None = None) -> int:
     """Run the benchmark and write CSV files to the output directory."""
     parser = argparse.ArgumentParser(prog="task2_tank_battle.benchmark")
     parser.add_argument("--config", type=Path, default=Path("experiments/configs/task2.json"))
-    parser.add_argument("--out", type=Path, default=Path("experiments/results"))
+    parser.add_argument("--out", type=Path, default=Path("experiments/results/task2"))
     parser.add_argument("--model", choices=["engine", "stub"], default="engine")
     args = parser.parse_args(argv)
 

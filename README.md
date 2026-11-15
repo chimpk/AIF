@@ -143,6 +143,14 @@ AIF/
 │       └── data/puzzles/
 ├── tests/                                     # [A+B theo từng thư mục con]
 ├── experiments/                               # [A: task1, task2 | B: task3]
+│   ├── configs/                               # task1.json, task2.json, task3.json
+│   ├── results/                               # Kết quả phân tách theo bài toán
+│   │   ├── task1/                             # task1_sat.csv, task1_min_conflicts_*.csv
+│   │   ├── task2/                             # task2_search_*.csv, task2_matches_*.csv
+│   │   └── task3/                             # task3_kakuro_benchmark.csv
+│   ├── task1_nqueens.ipynb                    # Notebook thực nghiệm Task 1
+│   ├── task2_search.ipynb                     # Notebook thực nghiệm Task 2
+│   └── task3_kakuro.ipynb                     # Notebook thực nghiệm Task 3
 └── report/                                    # [A+B]
 ```
 

@@ -5,7 +5,7 @@
 |---|---|
 | Task 1 – N-Queens | `src/task1_nqueens/`, `tests/task1/`, `experiments/task1_nqueens.ipynb` |
 | Task 2 – AI tìm kiếm | `src/task2_tank_battle/ai/`, `src/task2_tank_battle/benchmark/`, `tests/task2/ai/`, `tests/task2/doubles/stub_forward_model.py`, `experiments/task2_search.ipynb` |
-| Kết quả thực nghiệm | `experiments/results/task1_*.csv`, `task2_*.csv`, `task2_benchmark_meta.json` |
+| Kết quả thực nghiệm | `experiments/results/task1/`, `experiments/results/task2/` |
 
 Không sửa `contracts/`, `engine/`, `plugins/`, `ui/` và test của B. Chỉ thêm các khoá tuỳ chọn
 (`positions_per_scenario`, `match_depth_ply`, `match_max_cycles`) vào `experiments/configs/task2.json`.

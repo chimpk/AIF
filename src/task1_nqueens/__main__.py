@@ -35,7 +35,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     bench = sub.add_parser("benchmark", help="run the full experiment suite")
     bench.add_argument("--config", type=Path, default=Path("experiments/configs/task1.json"))
-    bench.add_argument("--out", type=Path, default=Path("experiments/results"))
+    bench.add_argument("--out", type=Path, default=Path("experiments/results/task1"))
     return parser
 
 

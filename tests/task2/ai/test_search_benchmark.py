@@ -14,6 +14,7 @@ from task2_tank_battle.benchmark import (
     play_match,
     sample_positions,
 )
+from task2_tank_battle.benchmark.__main__ import main as benchmark_main
 from task2_tank_battle.contracts.state import GameOutcome
 from task2_tank_battle.contracts.types import Action
 
@@ -120,3 +121,30 @@ def test_missing_engine_gives_clear_error(model, tmp_path):
     cfg.write_text(json.dumps({"scenarios": [str(S1)], "depths_ply": [2]}))
     with pytest.raises(RuntimeError, match="configured state loader"):
         SearchBenchmarkRunner(model, unimplemented).run(cfg, tmp_path / "o")
+
+
+def test_cli_writes_to_task2_result_directory_by_default(tmp_path, monkeypatch):
+    config = {
+        "scenarios": [str(S1)],
+        "depths_ply": [2],
+        "configs": ["MINIMAX"],
+        "time_cap_s": 5.0,
+        "match_games": 1,
+        "seeds": [0],
+        "positions_per_scenario": 1,
+        "match_depth_ply": 2,
+        "match_max_cycles": 2,
+    }
+    config_dir = tmp_path / "experiments" / "configs"
+    config_dir.mkdir(parents=True)
+    (config_dir / "task2.json").write_text(json.dumps(config))
+    monkeypatch.chdir(tmp_path)
+
+    assert benchmark_main([]) == 0
+    assert {p.name for p in (tmp_path / "experiments" / "results" / "task2").iterdir()} == {
+        "task2_search_runs.csv",
+        "task2_search_summary.csv",
+        "task2_matches.csv",
+        "task2_matches_summary.csv",
+        "task2_benchmark_meta.json",
+    }
