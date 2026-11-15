@@ -40,6 +40,10 @@ class TestPackagingAndNotebookOutputs(unittest.TestCase):
                 / "task3_kakuro_benchmark.csv"
             ).is_file()
         )
+        self.assertTrue((root / "report" / "report.pdf").is_file())
+        self.assertTrue((root / "report" / "main.tex").is_file())
+        self.assertTrue((root / "report" / "references.bib").is_file())
+
         # Ensure no loose files remain directly inside experiments/results except README.md
         loose_files = [
             f.name
